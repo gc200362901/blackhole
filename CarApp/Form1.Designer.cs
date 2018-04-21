@@ -41,10 +41,10 @@
             this.allCarsPanel = new System.Windows.Forms.Panel();
             this.allCarsDataGridView = new System.Windows.Forms.DataGridView();
             this.availablePanel = new System.Windows.Forms.Panel();
-            this.soldPanel = new System.Windows.Forms.Panel();
-            this.financialPanel = new System.Windows.Forms.Panel();
             this.availableCarsDataGridView = new System.Windows.Forms.DataGridView();
+            this.soldPanel = new System.Windows.Forms.Panel();
             this.soldDataGridView = new System.Windows.Forms.DataGridView();
+            this.financialPanel = new System.Windows.Forms.Panel();
             this.financialDataGridView = new System.Windows.Forms.DataGridView();
             this.navPanel.SuspendLayout();
             this.homePanel.SuspendLayout();
@@ -52,10 +52,10 @@
             this.allCarsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.allCarsDataGridView)).BeginInit();
             this.availablePanel.SuspendLayout();
-            this.soldPanel.SuspendLayout();
-            this.financialPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.availableCarsDataGridView)).BeginInit();
+            this.soldPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.soldDataGridView)).BeginInit();
+            this.financialPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.financialDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,24 +212,6 @@
             this.availablePanel.Size = new System.Drawing.Size(724, 428);
             this.availablePanel.TabIndex = 0;
             // 
-            // soldPanel
-            // 
-            this.soldPanel.Controls.Add(this.soldDataGridView);
-            this.soldPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.soldPanel.Location = new System.Drawing.Point(0, 100);
-            this.soldPanel.Name = "soldPanel";
-            this.soldPanel.Size = new System.Drawing.Size(724, 428);
-            this.soldPanel.TabIndex = 0;
-            // 
-            // financialPanel
-            // 
-            this.financialPanel.Controls.Add(this.financialDataGridView);
-            this.financialPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.financialPanel.Location = new System.Drawing.Point(0, 100);
-            this.financialPanel.Name = "financialPanel";
-            this.financialPanel.Size = new System.Drawing.Size(724, 428);
-            this.financialPanel.TabIndex = 0;
-            // 
             // availableCarsDataGridView
             // 
             this.availableCarsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -242,6 +224,15 @@
             this.availableCarsDataGridView.Size = new System.Drawing.Size(724, 428);
             this.availableCarsDataGridView.TabIndex = 0;
             // 
+            // soldPanel
+            // 
+            this.soldPanel.Controls.Add(this.soldDataGridView);
+            this.soldPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.soldPanel.Location = new System.Drawing.Point(0, 100);
+            this.soldPanel.Name = "soldPanel";
+            this.soldPanel.Size = new System.Drawing.Size(724, 428);
+            this.soldPanel.TabIndex = 0;
+            // 
             // soldDataGridView
             // 
             this.soldDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -253,6 +244,15 @@
             this.soldDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.soldDataGridView.Size = new System.Drawing.Size(724, 428);
             this.soldDataGridView.TabIndex = 0;
+            // 
+            // financialPanel
+            // 
+            this.financialPanel.Controls.Add(this.financialDataGridView);
+            this.financialPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.financialPanel.Location = new System.Drawing.Point(0, 100);
+            this.financialPanel.Name = "financialPanel";
+            this.financialPanel.Size = new System.Drawing.Size(724, 428);
+            this.financialPanel.TabIndex = 0;
             // 
             // financialDataGridView
             // 
@@ -283,10 +283,10 @@
             this.allCarsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.allCarsDataGridView)).EndInit();
             this.availablePanel.ResumeLayout(false);
-            this.soldPanel.ResumeLayout(false);
-            this.financialPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.availableCarsDataGridView)).EndInit();
+            this.soldPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.soldDataGridView)).EndInit();
+            this.financialPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.financialDataGridView)).EndInit();
             this.ResumeLayout(false);
 
