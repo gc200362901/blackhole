@@ -8,3 +8,4 @@ C:\Users\warmcheese\Documents\vsprojects\CarApp\CarApp\obj\Debug\CarApp.csproj.G
 C:\Users\warmcheese\Documents\vsprojects\CarApp\CarApp\obj\Debug\CarApp.csproj.CoreCompileInputs.cache
 C:\Users\warmcheese\Documents\vsprojects\CarApp\CarApp\obj\Debug\CarApp.exe
 C:\Users\warmcheese\Documents\vsprojects\CarApp\CarApp\obj\Debug\CarApp.pdb
+C:\Users\warmcheese\Documents\vsprojects\CarApp\CarApp\obj\Debug\CarApp.addVehicle.resources

@@ -36,6 +36,7 @@
             this.allCarsButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
             this.homePanel = new System.Windows.Forms.Panel();
+            this.addToDbButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.allCarsPanel = new System.Windows.Forms.Panel();
@@ -155,6 +156,7 @@
             // 
             // homePanel
             // 
+            this.homePanel.Controls.Add(this.addToDbButton);
             this.homePanel.Controls.Add(this.pictureBox1);
             this.homePanel.Controls.Add(this.label1);
             this.homePanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -163,10 +165,26 @@
             this.homePanel.Size = new System.Drawing.Size(724, 428);
             this.homePanel.TabIndex = 1;
             // 
+            // addToDbButton
+            // 
+            this.addToDbButton.FlatAppearance.BorderSize = 0;
+            this.addToDbButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addToDbButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addToDbButton.Image = ((System.Drawing.Image)(resources.GetObject("addToDbButton.Image")));
+            this.addToDbButton.Location = new System.Drawing.Point(12, 10);
+            this.addToDbButton.Name = "addToDbButton";
+            this.addToDbButton.Size = new System.Drawing.Size(139, 100);
+            this.addToDbButton.TabIndex = 2;
+            this.addToDbButton.Text = "Add Vechicle";
+            this.addToDbButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.addToDbButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.addToDbButton.UseVisualStyleBackColor = true;
+            this.addToDbButton.Click += new System.EventHandler(this.addToDbButton_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(119, 144);
+            this.pictureBox1.Location = new System.Drawing.Point(145, 144);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(485, 272);
             this.pictureBox1.TabIndex = 1;
@@ -176,7 +194,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(208, 65);
+            this.label1.Location = new System.Drawing.Point(253, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(308, 44);
             this.label1.TabIndex = 0;
@@ -311,6 +329,7 @@
         private System.Windows.Forms.DataGridView availableCarsDataGridView;
         private System.Windows.Forms.DataGridView soldDataGridView;
         private System.Windows.Forms.DataGridView financialDataGridView;
+        private System.Windows.Forms.Button addToDbButton;
     }
 }
 

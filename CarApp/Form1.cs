@@ -166,5 +166,11 @@ namespace CarApp
 
             financialDataGridView.DataSource = GetCarsFinancial();
         }
+
+        private void addToDbButton_Click(object sender, EventArgs e)
+        {
+            AddVehicle av = new AddVehicle();
+            av.ShowDialog();
+        }
     }
 }
