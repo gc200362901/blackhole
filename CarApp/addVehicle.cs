@@ -230,25 +230,25 @@ namespace CarApp
             Console.WriteLine(makeId);
             Console.WriteLine(modelId);
 
-            //string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
+            string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
-            //using (SqlConnection conn = new SqlConnection(connString))
+            using (SqlConnection conn = new SqlConnection(connString))
 
-            //{
-            //    using (SqlCommand cmd = new SqlCommand("INSERT INTO Vehicle (MakeId, ModelId, Year, Price, SoldDate) " +
-            //                                           "VALUES ('" + makeId + "'," +
-            //                                                   "'" + modelId + "'," +
-            //                                                   "'" + yearTextBox.Text + "'," +
-            //                                                   "'" + priceTextBox.Text + "'," +
-            //                                                   "'" + soldDateTextBox.Text + "')", conn))
+            {
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Vehicle (MakeId, ModelId, Year, Price, SoldDate) " +
+                                                       "VALUES ('" + makeId + "'," +
+                                                               "'" + modelId + "'," +
+                                                               "'" + yearTextBox.Text + "'," +
+                                                               "'" + priceTextBox.Text + "'," +
+                                                               "'" + soldDateTextBox.Text + "')", conn))
 
-            //    {
+                {
 
-            //        conn.Open();
+                    conn.Open();
 
-            //        cmd.ExecuteNonQuery();
-            //    }
-            //}
+                    cmd.ExecuteNonQuery();
+                }
+            }
             MessageBox.Show("Model Saved");
         }
     }
