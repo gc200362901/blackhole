@@ -58,6 +58,8 @@ namespace CarApp
                 modelPanel.Visible = false;
                 vehicleTypePanel.Visible = false;
                 vehiclePanel.Visible = true;
+
+                
             }
         }
 
@@ -136,6 +138,24 @@ namespace CarApp
             MessageBox.Show("Make Saved");
         }
 
+        private void vehicleTypeSaveButton_Click(object sender, EventArgs e)
+        {
+            string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
+            using (SqlConnection conn = new SqlConnection(connString))
+
+            {
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO VehicleType (Name) " +
+                                                       "VALUES ('" + vehicleTypeText.Text + "')", conn))
+
+                {
+
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            MessageBox.Show("Vehicle Type Saved");
+        }
     }
 }

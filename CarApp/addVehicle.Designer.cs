@@ -54,7 +54,7 @@
             this.vehicleTypePanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.vehicleTypeText = new System.Windows.Forms.TextBox();
             this.vehiclePanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,13 +62,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.makeComboBox = new System.Windows.Forms.ComboBox();
+            this.modelComboBox = new System.Windows.Forms.ComboBox();
+            this.yearTextBox = new System.Windows.Forms.TextBox();
+            this.priceTextBox = new System.Windows.Forms.TextBox();
+            this.soldDateTextBox = new System.Windows.Forms.TextBox();
+            this.vehicleSaveButton = new System.Windows.Forms.Button();
+            this.vehicleTypeSaveButton = new System.Windows.Forms.Button();
             this.makeSaveButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -331,7 +331,7 @@
             // 
             // vehicleTypePanel
             // 
-            this.vehicleTypePanel.Controls.Add(this.button2);
+            this.vehicleTypePanel.Controls.Add(this.vehicleTypeSaveButton);
             this.vehicleTypePanel.Controls.Add(this.tableLayoutPanel3);
             this.vehicleTypePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vehicleTypePanel.Location = new System.Drawing.Point(0, 119);
@@ -345,7 +345,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.14876F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.85124F));
             this.tableLayoutPanel3.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox5, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.vehicleTypeText, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(7, 22);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
@@ -366,16 +366,16 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Type";
             // 
-            // textBox5
+            // vehicleTypeText
             // 
-            this.textBox5.Location = new System.Drawing.Point(105, 3);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(120, 20);
-            this.textBox5.TabIndex = 1;
+            this.vehicleTypeText.Location = new System.Drawing.Point(105, 3);
+            this.vehicleTypeText.Name = "vehicleTypeText";
+            this.vehicleTypeText.Size = new System.Drawing.Size(120, 20);
+            this.vehicleTypeText.TabIndex = 1;
             // 
             // vehiclePanel
             // 
-            this.vehiclePanel.Controls.Add(this.button1);
+            this.vehiclePanel.Controls.Add(this.vehicleSaveButton);
             this.vehiclePanel.Controls.Add(this.tableLayoutPanel2);
             this.vehiclePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vehiclePanel.Location = new System.Drawing.Point(0, 119);
@@ -393,11 +393,11 @@
             this.tableLayoutPanel2.Controls.Add(this.label10, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label11, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.label12, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox3, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox4, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.textBox6, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox7, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.textBox8, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.makeComboBox, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.modelComboBox, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.yearTextBox, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.priceTextBox, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.soldDateTextBox, 1, 4);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 22);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
@@ -459,62 +459,63 @@
             this.label12.TabIndex = 4;
             this.label12.Text = "Sold Date";
             // 
-            // comboBox3
+            // makeComboBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(105, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 5;
+            this.makeComboBox.FormattingEnabled = true;
+            this.makeComboBox.Location = new System.Drawing.Point(105, 3);
+            this.makeComboBox.Name = "makeComboBox";
+            this.makeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.makeComboBox.TabIndex = 5;
             // 
-            // comboBox4
+            // modelComboBox
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(105, 43);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 6;
+            this.modelComboBox.FormattingEnabled = true;
+            this.modelComboBox.Location = new System.Drawing.Point(105, 43);
+            this.modelComboBox.Name = "modelComboBox";
+            this.modelComboBox.Size = new System.Drawing.Size(121, 21);
+            this.modelComboBox.TabIndex = 6;
             // 
-            // textBox6
+            // yearTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(105, 79);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(120, 20);
-            this.textBox6.TabIndex = 7;
+            this.yearTextBox.Location = new System.Drawing.Point(105, 79);
+            this.yearTextBox.Name = "yearTextBox";
+            this.yearTextBox.Size = new System.Drawing.Size(120, 20);
+            this.yearTextBox.TabIndex = 7;
             // 
-            // textBox7
+            // priceTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(105, 116);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(120, 20);
-            this.textBox7.TabIndex = 8;
+            this.priceTextBox.Location = new System.Drawing.Point(105, 116);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(120, 20);
+            this.priceTextBox.TabIndex = 8;
             // 
-            // textBox8
+            // soldDateTextBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(105, 154);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(121, 20);
-            this.textBox8.TabIndex = 9;
+            this.soldDateTextBox.Location = new System.Drawing.Point(105, 154);
+            this.soldDateTextBox.Name = "soldDateTextBox";
+            this.soldDateTextBox.Size = new System.Drawing.Size(121, 20);
+            this.soldDateTextBox.TabIndex = 9;
             // 
-            // button1
+            // vehicleSaveButton
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(223, 230);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 29);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.vehicleSaveButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vehicleSaveButton.Location = new System.Drawing.Point(223, 230);
+            this.vehicleSaveButton.Name = "vehicleSaveButton";
+            this.vehicleSaveButton.Size = new System.Drawing.Size(75, 29);
+            this.vehicleSaveButton.TabIndex = 3;
+            this.vehicleSaveButton.Text = "Save";
+            this.vehicleSaveButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // vehicleTypeSaveButton
             // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(223, 230);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 29);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
+            this.vehicleTypeSaveButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vehicleTypeSaveButton.Location = new System.Drawing.Point(223, 230);
+            this.vehicleTypeSaveButton.Name = "vehicleTypeSaveButton";
+            this.vehicleTypeSaveButton.Size = new System.Drawing.Size(75, 29);
+            this.vehicleTypeSaveButton.TabIndex = 3;
+            this.vehicleTypeSaveButton.Text = "Save";
+            this.vehicleTypeSaveButton.UseVisualStyleBackColor = true;
+            this.vehicleTypeSaveButton.Click += new System.EventHandler(this.vehicleTypeSaveButton_Click);
             // 
             // makeSaveButton
             // 
@@ -532,10 +533,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 390);
-            this.Controls.Add(this.makePanel);
-            this.Controls.Add(this.vehicleTypePanel);
-            this.Controls.Add(this.modelPanel);
             this.Controls.Add(this.vehiclePanel);
+            this.Controls.Add(this.vehicleTypePanel);
+            this.Controls.Add(this.makePanel);
+            this.Controls.Add(this.modelPanel);
             this.Controls.Add(this.addVehicleMainPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -586,18 +587,18 @@
         private System.Windows.Forms.ComboBox vehicleType;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox vehicleTypeText;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.ComboBox makeComboBox;
+        private System.Windows.Forms.ComboBox modelComboBox;
+        private System.Windows.Forms.TextBox yearTextBox;
+        private System.Windows.Forms.TextBox priceTextBox;
+        private System.Windows.Forms.TextBox soldDateTextBox;
         private System.Windows.Forms.Panel addVehicleMainPanel;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.TextBox engineTextBox;
@@ -605,8 +606,8 @@
         public System.Windows.Forms.TextBox colorTextBox;
         public System.Windows.Forms.Button modelSaveButton;
         public System.Windows.Forms.Button makeSaveButton;
-        public System.Windows.Forms.Button button2;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button vehicleTypeSaveButton;
+        public System.Windows.Forms.Button vehicleSaveButton;
         public System.Windows.Forms.TextBox makeTextBox;
     }
 }
