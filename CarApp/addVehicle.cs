@@ -21,8 +21,6 @@ namespace CarApp
 
         private void tablesComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string make, model, vehicleType, vehicle;
-
             String tableSelected = tablesComboBox.Text;
 
             if(tableSelected.Equals("Make"))
@@ -40,6 +38,8 @@ namespace CarApp
                 modelPanel.Visible = true;
                 vehicleTypePanel.Visible = false;
                 vehiclePanel.Visible = false;
+
+                PopulateVehicleTypeComboBox();
             }
             else if(tableSelected.Equals("Vehicle Type"))
             {
@@ -59,55 +59,46 @@ namespace CarApp
             }
         }
 
-        private void comboBox_Load()
+        private void PopulateVehicleTypeComboBox()
         {
+            List<String> vehicleTypeNames = new List<String>();
+
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
-
-
             using (SqlConnection conn = new SqlConnection(connString))
-
             {
+                using (SqlCommand cmd = new SqlCommand("Select Name FROM VehicleType", conn))
+                {
+                    conn.Open();
 
-                string query = "SELECT * FROM  VehicleTypeId";
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                conn.Open();
-
-                DataSet ds = new DataSet();
-                da.Fill(ds, "VehicleTypeId");
-                vehicleType.DisplayMember = "Name";
-                vehicleType.ValueMember = "VehicleTypeId";
-                vehicleType.DataSource = ds.Tables["VehicleTypeId"];
+                    while(reader.Read())
+                    {
+                        vehicleTypeNames.Add(reader.GetString(0));
+                    }
+                }
+            }
+            foreach(String type in vehicleTypeNames)
+            {
+                vehicleType.Items.Add(type);
             }
         }
 
-        private void saveModelButton_Click(object sender, EventArgs e)
-
+        private void SaveModelButton_Click(object sender, EventArgs e)
         {
-
             SaveModel();
 
             MessageBox.Show("Model Saved");
-
         }
 
         private void SaveModel()
         {
-
-
-
-
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
-
-
 
             using (SqlConnection conn = new SqlConnection(connString))
 
             {
-
-
-
                 using (SqlCommand cmd = new SqlCommand("INSERT model (EngineSize, NumberOfDoors, Color, VehicleTypeId ) " +
 
                                                        "VALUES ('" + engineTextBox.Text + "'," +
@@ -119,16 +110,11 @@ namespace CarApp
                                                        "'" + vehicleType.SelectedItem.ToString() + "')" +
                                                        conn))
 
-
-
                 {
 
                     conn.Open();
 
-
-
                     cmd.ExecuteNonQuery();
-
                 }
 
             }

@@ -47,6 +47,7 @@
             this.soldDataGridView = new System.Windows.Forms.DataGridView();
             this.financialPanel = new System.Windows.Forms.Panel();
             this.financialDataGridView = new System.Windows.Forms.DataGridView();
+            this.exportDbButton = new System.Windows.Forms.Button();
             this.navPanel.SuspendLayout();
             this.homePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -156,6 +157,7 @@
             // 
             // homePanel
             // 
+            this.homePanel.Controls.Add(this.exportDbButton);
             this.homePanel.Controls.Add(this.addToDbButton);
             this.homePanel.Controls.Add(this.pictureBox1);
             this.homePanel.Controls.Add(this.label1);
@@ -171,7 +173,7 @@
             this.addToDbButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addToDbButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addToDbButton.Image = ((System.Drawing.Image)(resources.GetObject("addToDbButton.Image")));
-            this.addToDbButton.Location = new System.Drawing.Point(12, 10);
+            this.addToDbButton.Location = new System.Drawing.Point(12, 316);
             this.addToDbButton.Name = "addToDbButton";
             this.addToDbButton.Size = new System.Drawing.Size(139, 100);
             this.addToDbButton.TabIndex = 2;
@@ -184,7 +186,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(145, 144);
+            this.pictureBox1.Location = new System.Drawing.Point(110, 67);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(485, 272);
             this.pictureBox1.TabIndex = 1;
@@ -194,7 +196,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(253, 29);
+            this.label1.Location = new System.Drawing.Point(197, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(308, 44);
             this.label1.TabIndex = 0;
@@ -281,6 +283,21 @@
             this.financialDataGridView.Size = new System.Drawing.Size(724, 428);
             this.financialDataGridView.TabIndex = 0;
             // 
+            // exportDbButton
+            // 
+            this.exportDbButton.FlatAppearance.BorderSize = 0;
+            this.exportDbButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exportDbButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportDbButton.Image = ((System.Drawing.Image)(resources.GetObject("exportDbButton.Image")));
+            this.exportDbButton.Location = new System.Drawing.Point(573, 316);
+            this.exportDbButton.Name = "exportDbButton";
+            this.exportDbButton.Size = new System.Drawing.Size(139, 100);
+            this.exportDbButton.TabIndex = 3;
+            this.exportDbButton.Text = "Export";
+            this.exportDbButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.exportDbButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.exportDbButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,6 +347,7 @@
         private System.Windows.Forms.DataGridView soldDataGridView;
         private System.Windows.Forms.DataGridView financialDataGridView;
         private System.Windows.Forms.Button addToDbButton;
+        private System.Windows.Forms.Button exportDbButton;
     }
 }
 
