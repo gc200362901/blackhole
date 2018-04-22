@@ -212,6 +212,7 @@
             this.modelSaveButton.TabIndex = 2;
             this.modelSaveButton.Text = "Save";
             this.modelSaveButton.UseVisualStyleBackColor = true;
+            this.modelSaveButton.Click += new System.EventHandler(this.modelSaveButton_Click_1);
             // 
             // tableLayoutPanel4
             // 
@@ -494,8 +495,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 390);
-            this.Controls.Add(this.addVehicleMainPanel);
             this.Controls.Add(this.modelPanel);
+            this.Controls.Add(this.addVehicleMainPanel);
             this.Controls.Add(this.vehiclePanel);
             this.Controls.Add(this.vehicleTypePanel);
             this.Controls.Add(this.makePanel);
@@ -543,12 +544,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox engineTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox doorsTextBox;
-        private System.Windows.Forms.TextBox colorTextBox;
         private System.Windows.Forms.ComboBox vehicleType;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label7;
@@ -564,8 +562,11 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button modelSaveButton;
         private System.Windows.Forms.Panel addVehicleMainPanel;
         private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.TextBox engineTextBox;
+        public System.Windows.Forms.TextBox doorsTextBox;
+        public System.Windows.Forms.TextBox colorTextBox;
+        public System.Windows.Forms.Button modelSaveButton;
     }
 }

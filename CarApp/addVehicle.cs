@@ -14,6 +14,8 @@ namespace CarApp
 {
     public partial class AddVehicle : Form
     {
+        Dictionary<int, string> vehicleTypesDic;
+
         public AddVehicle()
         {
             InitializeComponent();
@@ -61,6 +63,7 @@ namespace CarApp
 
         private void PopulateVehicleTypeComboBox()
         {
+            vehicleTypesDic = new Dictionary<int, string>();
             List<String> vehicleTypeNames = new List<String>();
 
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
@@ -79,36 +82,29 @@ namespace CarApp
                     }
                 }
             }
+            int idCounter = 1;
             foreach(String type in vehicleTypeNames)
             {
                 vehicleType.Items.Add(type);
+                vehicleTypesDic.Add(idCounter, type);
+                idCounter++;
             }
         }
 
-        private void SaveModelButton_Click(object sender, EventArgs e)
+        private void modelSaveButton_Click_1(object sender, EventArgs e)
         {
-            SaveModel();
+            int typeId = vehicleTypesDic.FirstOrDefault(x => x.Value == vehicleType.Text).Key;
 
-            MessageBox.Show("Model Saved");
-        }
-
-        private void SaveModel()
-        {
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connString))
 
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT model (EngineSize, NumberOfDoors, Color, VehicleTypeId ) " +
-
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Model (EngineSize, NumberOfDoors, Color, VehicleTypeId) " +
                                                        "VALUES ('" + engineTextBox.Text + "'," +
-
-                                                       "'" + doorsTextBox.Text + "'," +
-
-                                                       "'" + colorTextBox.Text + "'," +
-
-                                                       "'" + vehicleType.SelectedItem.ToString() + "')" +
-                                                       conn))
+                                                               "'" + doorsTextBox.Text + "'," +
+                                                               "'" + colorTextBox.Text + "'," +
+                                                               "'" + typeId + "')", conn))
 
                 {
 
@@ -118,9 +114,6 @@ namespace CarApp
                 }
 
             }
-
         }
-
-
     }
 }
