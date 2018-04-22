@@ -37,7 +37,7 @@
             this.makePanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.makeTextBox = new System.Windows.Forms.TextBox();
             this.modelPanel = new System.Windows.Forms.Panel();
             this.modelSaveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -67,6 +67,9 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.makeSaveButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -152,6 +155,7 @@
             // 
             // makePanel
             // 
+            this.makePanel.Controls.Add(this.makeSaveButton);
             this.makePanel.Controls.Add(this.tableLayoutPanel5);
             this.makePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.makePanel.Location = new System.Drawing.Point(0, 119);
@@ -165,7 +169,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.14876F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.85124F));
             this.tableLayoutPanel5.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.makeTextBox, 1, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(7, 22);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
@@ -186,12 +190,12 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Make";
             // 
-            // textBox1
+            // makeTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(105, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 1;
+            this.makeTextBox.Location = new System.Drawing.Point(105, 3);
+            this.makeTextBox.Name = "makeTextBox";
+            this.makeTextBox.Size = new System.Drawing.Size(120, 20);
+            this.makeTextBox.TabIndex = 1;
             // 
             // modelPanel
             // 
@@ -206,7 +210,7 @@
             // modelSaveButton
             // 
             this.modelSaveButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modelSaveButton.Location = new System.Drawing.Point(190, 216);
+            this.modelSaveButton.Location = new System.Drawing.Point(223, 230);
             this.modelSaveButton.Name = "modelSaveButton";
             this.modelSaveButton.Size = new System.Drawing.Size(75, 29);
             this.modelSaveButton.TabIndex = 2;
@@ -327,6 +331,7 @@
             // 
             // vehicleTypePanel
             // 
+            this.vehicleTypePanel.Controls.Add(this.button2);
             this.vehicleTypePanel.Controls.Add(this.tableLayoutPanel3);
             this.vehicleTypePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vehicleTypePanel.Location = new System.Drawing.Point(0, 119);
@@ -370,6 +375,7 @@
             // 
             // vehiclePanel
             // 
+            this.vehiclePanel.Controls.Add(this.button1);
             this.vehiclePanel.Controls.Add(this.tableLayoutPanel2);
             this.vehiclePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vehiclePanel.Location = new System.Drawing.Point(0, 119);
@@ -490,16 +496,47 @@
             this.textBox8.Size = new System.Drawing.Size(121, 20);
             this.textBox8.TabIndex = 9;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(223, 230);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 29);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(223, 230);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 29);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // makeSaveButton
+            // 
+            this.makeSaveButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.makeSaveButton.Location = new System.Drawing.Point(223, 230);
+            this.makeSaveButton.Name = "makeSaveButton";
+            this.makeSaveButton.Size = new System.Drawing.Size(75, 29);
+            this.makeSaveButton.TabIndex = 3;
+            this.makeSaveButton.Text = "Save";
+            this.makeSaveButton.UseVisualStyleBackColor = true;
+            this.makeSaveButton.Click += new System.EventHandler(this.makeSaveButton_Click);
+            // 
             // AddVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 390);
-            this.Controls.Add(this.modelPanel);
-            this.Controls.Add(this.addVehicleMainPanel);
-            this.Controls.Add(this.vehiclePanel);
-            this.Controls.Add(this.vehicleTypePanel);
             this.Controls.Add(this.makePanel);
+            this.Controls.Add(this.vehicleTypePanel);
+            this.Controls.Add(this.modelPanel);
+            this.Controls.Add(this.vehiclePanel);
+            this.Controls.Add(this.addVehicleMainPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "AddVehicle";
@@ -541,7 +578,6 @@
         private System.Windows.Forms.Panel vehiclePanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -568,5 +604,9 @@
         public System.Windows.Forms.TextBox doorsTextBox;
         public System.Windows.Forms.TextBox colorTextBox;
         public System.Windows.Forms.Button modelSaveButton;
+        public System.Windows.Forms.Button makeSaveButton;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox makeTextBox;
     }
 }

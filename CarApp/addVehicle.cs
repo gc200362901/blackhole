@@ -112,8 +112,30 @@ namespace CarApp
 
                     cmd.ExecuteNonQuery();
                 }
-
             }
+            MessageBox.Show("Model Saved");
         }
+
+        private void makeSaveButton_Click(object sender, EventArgs e)
+        {
+            string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connString))
+
+            {
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Make (Name) " +
+                                                       "VALUES ('" + makeTextBox.Text + "')", conn))
+
+                {
+
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            MessageBox.Show("Make Saved");
+        }
+
+
     }
 }
