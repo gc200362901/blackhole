@@ -69,13 +69,12 @@ namespace CarApp
         private void PopulateModelComboBox()
         {
             modelTypesDic = new Dictionary<int, string>();
-            List<String> modelTypes = new List<string>();
 
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                using (SqlCommand cmd = new SqlCommand("Select Name FROM Model", conn))
+                using (SqlCommand cmd = new SqlCommand("Select ModelId, Name FROM Model", conn))
                 {
                     conn.Open();
 
@@ -83,29 +82,26 @@ namespace CarApp
 
                     while (reader.Read())
                     {
-                        modelTypes.Add(reader.GetString(0));
+                        modelTypesDic.Add(reader.GetInt32(0), reader.GetString(1));
                     }
                 }
             }
-            int idCounter = 1;
-            foreach (String type in modelTypes)
+            foreach (KeyValuePair<int, string> kvp in modelTypesDic)
             {
-                modelComboBox.Items.Add(type);
-                modelTypesDic.Add(idCounter, type);
-                idCounter++;
+                modelComboBox.Items.Add(kvp.Value);
             }
         }
+
 
         private void PopulateMakeComboBox()
         {
             makeTypesDic = new Dictionary<int, string>();
-            List<String> makeTypes = new List<string>();
 
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                using (SqlCommand cmd = new SqlCommand("Select Name FROM Make", conn))
+                using (SqlCommand cmd = new SqlCommand("Select MakeId, Name FROM Make", conn))
                 {
                     conn.Open();
 
@@ -113,29 +109,26 @@ namespace CarApp
 
                     while (reader.Read())
                     {
-                        makeTypes.Add(reader.GetString(0));
+                        makeTypesDic.Add(reader.GetInt32(0), reader.GetString(1));
                     }
                 }
             }
-            int idCounter = 1;
-            foreach (String type in makeTypes)
+            foreach(KeyValuePair<int, string> kvp in makeTypesDic)
             {
-                makeComboBox.Items.Add(type);
-                makeTypesDic.Add(idCounter, type);
-                idCounter++;
+                makeComboBox.Items.Add(kvp.Value);
             }
+ 
         }
 
         private void PopulateVehicleTypeComboBox()
         {
             vehicleTypesDic = new Dictionary<int, string>();
-            List<String> vehicleTypeNames = new List<String>();
 
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                using (SqlCommand cmd = new SqlCommand("Select Name FROM VehicleType", conn))
+                using (SqlCommand cmd = new SqlCommand("Select VehicleTypeId, Name FROM VehicleType", conn))
                 {
                     conn.Open();
 
@@ -143,16 +136,13 @@ namespace CarApp
 
                     while(reader.Read())
                     {
-                        vehicleTypeNames.Add(reader.GetString(0));
+                        vehicleTypesDic.Add(reader.GetInt32(0), reader.GetString(1));
                     }
                 }
             }
-            int idCounter = 1;
-            foreach(String type in vehicleTypeNames)
+            foreach (KeyValuePair<int, string> kvp in vehicleTypesDic)
             {
-                vehicleType.Items.Add(type);
-                vehicleTypesDic.Add(idCounter, type);
-                idCounter++;
+                vehicleType.Items.Add(kvp.Value);
             }
         }
 
