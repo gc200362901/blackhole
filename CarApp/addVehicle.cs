@@ -15,6 +15,8 @@ namespace CarApp
     public partial class AddVehicle : Form
     {
         Dictionary<int, string> vehicleTypesDic;
+        Dictionary<int, string> makeTypesDic;
+        Dictionary<int, string> modelTypesDic;
 
         public AddVehicle()
         {
@@ -59,7 +61,68 @@ namespace CarApp
                 vehicleTypePanel.Visible = false;
                 vehiclePanel.Visible = true;
 
-                
+                PopulateMakeComboBox();
+                PopulateModelComboBox();
+            }
+        }
+
+        private void PopulateModelComboBox()
+        {
+            modelTypesDic = new Dictionary<int, string>();
+            List<String> modelTypes = new List<string>();
+
+            string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select Name FROM Model", conn))
+                {
+                    conn.Open();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        modelTypes.Add(reader.GetString(0));
+                    }
+                }
+            }
+            int idCounter = 1;
+            foreach (String type in modelTypes)
+            {
+                modelComboBox.Items.Add(type);
+                modelTypesDic.Add(idCounter, type);
+                idCounter++;
+            }
+        }
+
+        private void PopulateMakeComboBox()
+        {
+            makeTypesDic = new Dictionary<int, string>();
+            List<String> makeTypes = new List<string>();
+
+            string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select Name FROM Make", conn))
+                {
+                    conn.Open();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        makeTypes.Add(reader.GetString(0));
+                    }
+                }
+            }
+            int idCounter = 1;
+            foreach (String type in makeTypes)
+            {
+                makeComboBox.Items.Add(type);
+                makeTypesDic.Add(idCounter, type);
+                idCounter++;
             }
         }
 
@@ -102,8 +165,9 @@ namespace CarApp
             using (SqlConnection conn = new SqlConnection(connString))
 
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Model (EngineSize, NumberOfDoors, Color, VehicleTypeId) " +
-                                                       "VALUES ('" + engineTextBox.Text + "'," +
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Model (Name, EngineSize, NumberOfDoors, Color, VehicleTypeId) " +
+                                                       "VALUES ('" + modelNameText.Text + "'," +
+                                                               "'" + engineTextBox.Text + "'," +
                                                                "'" + doorsTextBox.Text + "'," +
                                                                "'" + colorTextBox.Text + "'," +
                                                                "'" + typeId + "')", conn))
@@ -156,6 +220,36 @@ namespace CarApp
                 }
             }
             MessageBox.Show("Vehicle Type Saved");
+        }
+
+        private void vehicleSaveButton_Click(object sender, EventArgs e)
+        {
+            int makeId = makeTypesDic.FirstOrDefault(x => x.Value == makeComboBox.Text).Key;
+            int modelId = modelTypesDic.FirstOrDefault(x => x.Value == modelComboBox.Text).Key;
+
+            Console.WriteLine(makeId);
+            Console.WriteLine(modelId);
+
+            //string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
+
+            //using (SqlConnection conn = new SqlConnection(connString))
+
+            //{
+            //    using (SqlCommand cmd = new SqlCommand("INSERT INTO Vehicle (MakeId, ModelId, Year, Price, SoldDate) " +
+            //                                           "VALUES ('" + makeId + "'," +
+            //                                                   "'" + modelId + "'," +
+            //                                                   "'" + yearTextBox.Text + "'," +
+            //                                                   "'" + priceTextBox.Text + "'," +
+            //                                                   "'" + soldDateTextBox.Text + "')", conn))
+
+            //    {
+
+            //        conn.Open();
+
+            //        cmd.ExecuteNonQuery();
+            //    }
+            //}
+            MessageBox.Show("Model Saved");
         }
     }
 }

@@ -276,10 +276,12 @@
             // 
             // financialDataGridView
             // 
+            this.financialDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.financialDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.financialDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.financialDataGridView.Location = new System.Drawing.Point(0, 0);
             this.financialDataGridView.Name = "financialDataGridView";
+            this.financialDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.financialDataGridView.Size = new System.Drawing.Size(724, 428);
             this.financialDataGridView.TabIndex = 0;
             // 

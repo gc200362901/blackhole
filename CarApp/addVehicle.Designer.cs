@@ -70,6 +70,8 @@
             this.vehicleSaveButton = new System.Windows.Forms.Button();
             this.vehicleTypeSaveButton = new System.Windows.Forms.Button();
             this.makeSaveButton = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.modelNameText = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -223,29 +225,33 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.28099F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.71901F));
-            this.tableLayoutPanel4.Controls.Add(this.label4, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.engineTextBox, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.doorsTextBox, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.colorTextBox, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.vehicleType, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.modelNameText, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label14, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.vehicleType, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.label5, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.colorTextBox, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.doorsTextBox, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.engineTextBox, 1, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(7, 22);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 4;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(259, 137);
+            this.tableLayoutPanel4.RowCount = 5;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.35135F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.64865F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(259, 187);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 33);
+            this.label4.Location = new System.Drawing.Point(3, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 21);
             this.label4.TabIndex = 2;
@@ -253,7 +259,7 @@
             // 
             // engineTextBox
             // 
-            this.engineTextBox.Location = new System.Drawing.Point(122, 3);
+            this.engineTextBox.Location = new System.Drawing.Point(122, 41);
             this.engineTextBox.Name = "engineTextBox";
             this.engineTextBox.Size = new System.Drawing.Size(120, 20);
             this.engineTextBox.TabIndex = 0;
@@ -262,7 +268,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(3, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 21);
             this.label3.TabIndex = 1;
@@ -272,7 +278,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 66);
+            this.label5.Location = new System.Drawing.Point(3, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 21);
             this.label5.TabIndex = 3;
@@ -282,7 +288,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 102);
+            this.label6.Location = new System.Drawing.Point(3, 152);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 21);
             this.label6.TabIndex = 4;
@@ -290,14 +296,14 @@
             // 
             // doorsTextBox
             // 
-            this.doorsTextBox.Location = new System.Drawing.Point(122, 36);
+            this.doorsTextBox.Location = new System.Drawing.Point(122, 77);
             this.doorsTextBox.Name = "doorsTextBox";
             this.doorsTextBox.Size = new System.Drawing.Size(120, 20);
             this.doorsTextBox.TabIndex = 5;
             // 
             // colorTextBox
             // 
-            this.colorTextBox.Location = new System.Drawing.Point(122, 69);
+            this.colorTextBox.Location = new System.Drawing.Point(122, 116);
             this.colorTextBox.Name = "colorTextBox";
             this.colorTextBox.Size = new System.Drawing.Size(120, 20);
             this.colorTextBox.TabIndex = 6;
@@ -305,7 +311,7 @@
             // vehicleType
             // 
             this.vehicleType.FormattingEnabled = true;
-            this.vehicleType.Location = new System.Drawing.Point(122, 105);
+            this.vehicleType.Location = new System.Drawing.Point(122, 155);
             this.vehicleType.Name = "vehicleType";
             this.vehicleType.Size = new System.Drawing.Size(120, 21);
             this.vehicleType.TabIndex = 7;
@@ -505,6 +511,7 @@
             this.vehicleSaveButton.TabIndex = 3;
             this.vehicleSaveButton.Text = "Save";
             this.vehicleSaveButton.UseVisualStyleBackColor = true;
+            this.vehicleSaveButton.Click += new System.EventHandler(this.vehicleSaveButton_Click);
             // 
             // vehicleTypeSaveButton
             // 
@@ -528,16 +535,33 @@
             this.makeSaveButton.UseVisualStyleBackColor = true;
             this.makeSaveButton.Click += new System.EventHandler(this.makeSaveButton_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(58, 21);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Name";
+            // 
+            // modelNameText
+            // 
+            this.modelNameText.Location = new System.Drawing.Point(122, 3);
+            this.modelNameText.Name = "modelNameText";
+            this.modelNameText.Size = new System.Drawing.Size(120, 20);
+            this.modelNameText.TabIndex = 8;
+            // 
             // AddVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 390);
+            this.Controls.Add(this.addVehicleMainPanel);
             this.Controls.Add(this.vehiclePanel);
+            this.Controls.Add(this.modelPanel);
             this.Controls.Add(this.vehicleTypePanel);
             this.Controls.Add(this.makePanel);
-            this.Controls.Add(this.modelPanel);
-            this.Controls.Add(this.addVehicleMainPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "AddVehicle";
@@ -609,5 +633,7 @@
         public System.Windows.Forms.Button vehicleTypeSaveButton;
         public System.Windows.Forms.Button vehicleSaveButton;
         public System.Windows.Forms.TextBox makeTextBox;
+        public System.Windows.Forms.TextBox modelNameText;
+        private System.Windows.Forms.Label label14;
     }
 }

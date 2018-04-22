@@ -38,7 +38,7 @@ namespace CarApp
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT ma.Name, mo.EngineSize, mo.NumberOfDoors, mo.Color, " +
+                using (SqlCommand cmd = new SqlCommand("SELECT ma.Name, mo.Name AS 'Model', mo.EngineSize, mo.NumberOfDoors, mo.Color, " +
                     "                                       v.year, v.price FROM Vehicle v JOIN Make ma ON ma.MakeId = v.MakeId" +
                     "                                   JOIN Model mo ON mo.ModelId = v.ModelId", conn))
                 {
@@ -72,7 +72,7 @@ namespace CarApp
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT ma.Name, mo.EngineSize, mo.NumberOfDoors, mo.Color, " +
+                using (SqlCommand cmd = new SqlCommand("SELECT ma.Name, mo.Name AS 'Model', mo.EngineSize, mo.NumberOfDoors, mo.Color, " +
                                                           "v.year, v.price FROM Vehicle v JOIN Make ma ON ma.MakeId = v.MakeId " +
                                                        "JOIN Model mo ON mo.ModelId = v.ModelId " +
                                                        "WHERE v.SoldDate IS NULL", conn))
@@ -96,7 +96,7 @@ namespace CarApp
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT ma.Name, mo.EngineSize, mo.NumberOfDoors, mo.Color, " +
+                using (SqlCommand cmd = new SqlCommand("SELECT ma.Name, mo.Name AS 'Model', mo.EngineSize, mo.NumberOfDoors, mo.Color, " +
                                                           "v.year, v.price FROM Vehicle v JOIN Make ma ON ma.MakeId = v.MakeId " +
                                                        "JOIN Model mo ON mo.ModelId = v.ModelId " +
                                                        "WHERE v.SoldDate IS NOT NULL", conn))
