@@ -35,27 +35,33 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tablesComboBox = new System.Windows.Forms.ComboBox();
             this.makePanel = new System.Windows.Forms.Panel();
+            this.makeSaveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.makeTextBox = new System.Windows.Forms.TextBox();
             this.modelPanel = new System.Windows.Forms.Panel();
             this.modelSaveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.engineTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.modelNameText = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.doorsTextBox = new System.Windows.Forms.TextBox();
-            this.colorTextBox = new System.Windows.Forms.TextBox();
             this.vehicleType = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.colorTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.doorsTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.engineTextBox = new System.Windows.Forms.TextBox();
             this.addVehicleMainPanel = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.vehicleTypePanel = new System.Windows.Forms.Panel();
+            this.vehicleTypeSaveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.vehicleTypeText = new System.Windows.Forms.TextBox();
             this.vehiclePanel = new System.Windows.Forms.Panel();
+            this.importVehicleBtn = new System.Windows.Forms.Button();
+            this.vehicleSaveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -67,11 +73,7 @@
             this.yearTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.soldDateTextBox = new System.Windows.Forms.TextBox();
-            this.vehicleSaveButton = new System.Windows.Forms.Button();
-            this.vehicleTypeSaveButton = new System.Windows.Forms.Button();
-            this.makeSaveButton = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.modelNameText = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -165,6 +167,17 @@
             this.makePanel.Size = new System.Drawing.Size(322, 271);
             this.makePanel.TabIndex = 2;
             // 
+            // makeSaveButton
+            // 
+            this.makeSaveButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.makeSaveButton.Location = new System.Drawing.Point(223, 230);
+            this.makeSaveButton.Name = "makeSaveButton";
+            this.makeSaveButton.Size = new System.Drawing.Size(75, 29);
+            this.makeSaveButton.TabIndex = 3;
+            this.makeSaveButton.Text = "Save";
+            this.makeSaveButton.UseVisualStyleBackColor = true;
+            this.makeSaveButton.Click += new System.EventHandler(this.makeSaveButton_Click);
+            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
@@ -247,42 +260,22 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(259, 187);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
-            // label4
+            // modelNameText
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 21);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Doors";
+            this.modelNameText.Location = new System.Drawing.Point(122, 3);
+            this.modelNameText.Name = "modelNameText";
+            this.modelNameText.Size = new System.Drawing.Size(120, 20);
+            this.modelNameText.TabIndex = 8;
             // 
-            // engineTextBox
+            // label14
             // 
-            this.engineTextBox.Location = new System.Drawing.Point(122, 41);
-            this.engineTextBox.Name = "engineTextBox";
-            this.engineTextBox.Size = new System.Drawing.Size(120, 20);
-            this.engineTextBox.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Engine Size";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 113);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 21);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Color";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(58, 21);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Name";
             // 
             // label6
             // 
@@ -294,12 +287,23 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Vehicle Type";
             // 
-            // doorsTextBox
+            // vehicleType
             // 
-            this.doorsTextBox.Location = new System.Drawing.Point(122, 77);
-            this.doorsTextBox.Name = "doorsTextBox";
-            this.doorsTextBox.Size = new System.Drawing.Size(120, 20);
-            this.doorsTextBox.TabIndex = 5;
+            this.vehicleType.FormattingEnabled = true;
+            this.vehicleType.Location = new System.Drawing.Point(122, 155);
+            this.vehicleType.Name = "vehicleType";
+            this.vehicleType.Size = new System.Drawing.Size(120, 21);
+            this.vehicleType.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 21);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Color";
             // 
             // colorTextBox
             // 
@@ -308,13 +312,39 @@
             this.colorTextBox.Size = new System.Drawing.Size(120, 20);
             this.colorTextBox.TabIndex = 6;
             // 
-            // vehicleType
+            // label4
             // 
-            this.vehicleType.FormattingEnabled = true;
-            this.vehicleType.Location = new System.Drawing.Point(122, 155);
-            this.vehicleType.Name = "vehicleType";
-            this.vehicleType.Size = new System.Drawing.Size(120, 21);
-            this.vehicleType.TabIndex = 7;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 74);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 21);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Doors";
+            // 
+            // doorsTextBox
+            // 
+            this.doorsTextBox.Location = new System.Drawing.Point(122, 77);
+            this.doorsTextBox.Name = "doorsTextBox";
+            this.doorsTextBox.Size = new System.Drawing.Size(120, 20);
+            this.doorsTextBox.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 21);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Engine Size";
+            // 
+            // engineTextBox
+            // 
+            this.engineTextBox.Location = new System.Drawing.Point(122, 41);
+            this.engineTextBox.Name = "engineTextBox";
+            this.engineTextBox.Size = new System.Drawing.Size(120, 20);
+            this.engineTextBox.TabIndex = 0;
             // 
             // addVehicleMainPanel
             // 
@@ -344,6 +374,17 @@
             this.vehicleTypePanel.Name = "vehicleTypePanel";
             this.vehicleTypePanel.Size = new System.Drawing.Size(322, 271);
             this.vehicleTypePanel.TabIndex = 0;
+            // 
+            // vehicleTypeSaveButton
+            // 
+            this.vehicleTypeSaveButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vehicleTypeSaveButton.Location = new System.Drawing.Point(223, 230);
+            this.vehicleTypeSaveButton.Name = "vehicleTypeSaveButton";
+            this.vehicleTypeSaveButton.Size = new System.Drawing.Size(75, 29);
+            this.vehicleTypeSaveButton.TabIndex = 3;
+            this.vehicleTypeSaveButton.Text = "Save";
+            this.vehicleTypeSaveButton.UseVisualStyleBackColor = true;
+            this.vehicleTypeSaveButton.Click += new System.EventHandler(this.vehicleTypeSaveButton_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -381,6 +422,7 @@
             // 
             // vehiclePanel
             // 
+            this.vehiclePanel.Controls.Add(this.importVehicleBtn);
             this.vehiclePanel.Controls.Add(this.vehicleSaveButton);
             this.vehiclePanel.Controls.Add(this.tableLayoutPanel2);
             this.vehiclePanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -388,6 +430,28 @@
             this.vehiclePanel.Name = "vehiclePanel";
             this.vehiclePanel.Size = new System.Drawing.Size(322, 271);
             this.vehiclePanel.TabIndex = 0;
+            // 
+            // importVehicleBtn
+            // 
+            this.importVehicleBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importVehicleBtn.Location = new System.Drawing.Point(14, 230);
+            this.importVehicleBtn.Name = "importVehicleBtn";
+            this.importVehicleBtn.Size = new System.Drawing.Size(75, 29);
+            this.importVehicleBtn.TabIndex = 4;
+            this.importVehicleBtn.Text = "Import";
+            this.importVehicleBtn.UseVisualStyleBackColor = true;
+            this.importVehicleBtn.Click += new System.EventHandler(this.importVehicleBtn_Click);
+            // 
+            // vehicleSaveButton
+            // 
+            this.vehicleSaveButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vehicleSaveButton.Location = new System.Drawing.Point(223, 230);
+            this.vehicleSaveButton.Name = "vehicleSaveButton";
+            this.vehicleSaveButton.Size = new System.Drawing.Size(75, 29);
+            this.vehicleSaveButton.TabIndex = 3;
+            this.vehicleSaveButton.Text = "Save";
+            this.vehicleSaveButton.UseVisualStyleBackColor = true;
+            this.vehicleSaveButton.Click += new System.EventHandler(this.vehicleSaveButton_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -502,55 +566,10 @@
             this.soldDateTextBox.Size = new System.Drawing.Size(121, 20);
             this.soldDateTextBox.TabIndex = 9;
             // 
-            // vehicleSaveButton
+            // openFileDialog1
             // 
-            this.vehicleSaveButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vehicleSaveButton.Location = new System.Drawing.Point(223, 230);
-            this.vehicleSaveButton.Name = "vehicleSaveButton";
-            this.vehicleSaveButton.Size = new System.Drawing.Size(75, 29);
-            this.vehicleSaveButton.TabIndex = 3;
-            this.vehicleSaveButton.Text = "Save";
-            this.vehicleSaveButton.UseVisualStyleBackColor = true;
-            this.vehicleSaveButton.Click += new System.EventHandler(this.vehicleSaveButton_Click);
-            // 
-            // vehicleTypeSaveButton
-            // 
-            this.vehicleTypeSaveButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vehicleTypeSaveButton.Location = new System.Drawing.Point(223, 230);
-            this.vehicleTypeSaveButton.Name = "vehicleTypeSaveButton";
-            this.vehicleTypeSaveButton.Size = new System.Drawing.Size(75, 29);
-            this.vehicleTypeSaveButton.TabIndex = 3;
-            this.vehicleTypeSaveButton.Text = "Save";
-            this.vehicleTypeSaveButton.UseVisualStyleBackColor = true;
-            this.vehicleTypeSaveButton.Click += new System.EventHandler(this.vehicleTypeSaveButton_Click);
-            // 
-            // makeSaveButton
-            // 
-            this.makeSaveButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.makeSaveButton.Location = new System.Drawing.Point(223, 230);
-            this.makeSaveButton.Name = "makeSaveButton";
-            this.makeSaveButton.Size = new System.Drawing.Size(75, 29);
-            this.makeSaveButton.TabIndex = 3;
-            this.makeSaveButton.Text = "Save";
-            this.makeSaveButton.UseVisualStyleBackColor = true;
-            this.makeSaveButton.Click += new System.EventHandler(this.makeSaveButton_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(3, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 21);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Name";
-            // 
-            // modelNameText
-            // 
-            this.modelNameText.Location = new System.Drawing.Point(122, 3);
-            this.modelNameText.Name = "modelNameText";
-            this.modelNameText.Size = new System.Drawing.Size(120, 20);
-            this.modelNameText.TabIndex = 8;
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // AddVehicle
             // 
@@ -635,5 +654,7 @@
         public System.Windows.Forms.TextBox makeTextBox;
         public System.Windows.Forms.TextBox modelNameText;
         private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Button importVehicleBtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

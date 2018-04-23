@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace CarApp
             InitializeComponent();
         }
 
+        
         private void tablesComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             String tableSelected = tablesComboBox.Text;
@@ -60,15 +62,18 @@ namespace CarApp
                 modelPanel.Visible = false;
                 vehicleTypePanel.Visible = false;
                 vehiclePanel.Visible = true;
-
-                PopulateMakeComboBox();
+               
+                PopulateMakeComboBox();              
                 PopulateModelComboBox();
             }
         }
 
         private void PopulateModelComboBox()
         {
+            
             modelTypesDic = new Dictionary<int, string>();
+
+            modelTypesDic.Clear();
 
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
@@ -86,6 +91,7 @@ namespace CarApp
                     }
                 }
             }
+            modelComboBox.Items.Clear();
             foreach (KeyValuePair<int, string> kvp in modelTypesDic)
             {
                 modelComboBox.Items.Add(kvp.Value);
@@ -95,7 +101,11 @@ namespace CarApp
 
         private void PopulateMakeComboBox()
         {
+            
+
             makeTypesDic = new Dictionary<int, string>();
+
+            makeTypesDic.Clear();
 
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
@@ -113,6 +123,7 @@ namespace CarApp
                     }
                 }
             }
+            makeComboBox.Items.Clear();
             foreach(KeyValuePair<int, string> kvp in makeTypesDic)
             {
                 makeComboBox.Items.Add(kvp.Value);
@@ -122,7 +133,11 @@ namespace CarApp
 
         private void PopulateVehicleTypeComboBox()
         {
+           
+
             vehicleTypesDic = new Dictionary<int, string>();
+
+            vehicleTypesDic.Clear();
 
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
@@ -140,6 +155,7 @@ namespace CarApp
                     }
                 }
             }
+            vehicleType.Items.Clear();
             foreach (KeyValuePair<int, string> kvp in vehicleTypesDic)
             {
                 vehicleType.Items.Add(kvp.Value);
@@ -240,6 +256,51 @@ namespace CarApp
                 }
             }
             MessageBox.Show("Model Saved");
+        }
+
+        private void importVehicleBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            string[] lines = File.ReadAllLines(openFileDialog1.FileName);
+            foreach (var line in lines)
+            {
+                var data = line.Split(new[] { ',' }, 5);
+                int makeId = int.Parse(data[0].Trim());
+                int modelId = int.Parse(data[1].Trim());
+                int year = int.Parse(data[2].Trim());
+                decimal price = decimal.Parse(data[3].Trim());
+                DateTime soldDate = DateTime.Parse(data[4].Trim());
+                StoreRecord(makeId, modelId, year, price, soldDate);
+            }
+        }
+
+        private void StoreRecord(int makeId, int modelId, int year, decimal price, DateTime soldDate)
+        {
+            string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select VehicleTypeId, Name FROM VehicleType", conn))
+                {
+
+                    conn.Open();
+                    cmd.CommandText =
+                    @"INSERT INTO Vehicle (MakeId, ModelId, Year, Price, SoldDate) 
+                 VALUES (@MakeId, @ModelId, @Year, @Price, @SoldDate)";
+                    cmd.Parameters.AddWithValue("@MakeId", makeId);
+                    cmd.Parameters.AddWithValue("@ModelId", modelId);
+                    cmd.Parameters.AddWithValue("@Year", year);
+                    cmd.Parameters.AddWithValue("@Price", price);
+                    cmd.Parameters.AddWithValue("@SoldDate", soldDate);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

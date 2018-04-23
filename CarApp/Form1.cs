@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -171,6 +172,125 @@ namespace CarApp
         {
             AddVehicle av = new AddVehicle();
             av.ShowDialog();
+        }
+
+        private void AllCarsExportBtn_Click(object sender, EventArgs e)
+        {
+            TextWriter ac = new StreamWriter(@"..\..\..\AllCars.txt");
+
+            int rowcount = allCarsDataGridView.Rows.Count;
+            for (int i = 0; i < rowcount - 1; i++)
+
+            {                   // 7 Columns in the All Cars View
+
+                //allCarsDataGridView.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                ac.WriteLine(allCarsDataGridView.Rows[i].Cells[0].Value.ToString() + "\t" + "|"
+
+                    + "\t" + allCarsDataGridView.Rows[i].Cells[1].Value.ToString() + "\t" + "|"
+
+                    + "\t" + allCarsDataGridView.Rows[i].Cells[2].Value.ToString() + "\t" + "|"
+
+                    + "\t" + allCarsDataGridView.Rows[i].Cells[3].Value.ToString() + "\t" + "|"
+
+                    + "\t" + allCarsDataGridView.Rows[i].Cells[4].Value.ToString() + "\t" + "|"
+
+                    + "\t" + allCarsDataGridView.Rows[i].Cells[5].Value.ToString() + "\t" + "|"
+
+                    + "\t" + allCarsDataGridView.Rows[i].Cells[6].Value.ToString() + "\t" + "|");
+            }
+
+            ac.Close();
+
+            MessageBox.Show("Data Exported to: CarApp\\AllCars.txt", "Export All Cars to Text");
+
+        }
+    
+        private void AvailableExportBtn_Click(object sender, EventArgs e)
+        {
+            TextWriter avc = new StreamWriter(@"..\..\..\AvailableCars.txt");
+
+            int rowcount = availableCarsDataGridView.Rows.Count;
+
+            for (int i = 0; i < rowcount - 1; i++)
+
+            {                   // 7 Columns in the All Cars View
+
+                avc.WriteLine("|" + "\t" + availableCarsDataGridView.Rows[i].Cells[0].Value.ToString() + "\t" + "|"
+
+                    + "\t" + availableCarsDataGridView.Rows[i].Cells[1].Value.ToString() + "\t" + "|"
+
+                    + "\t" + availableCarsDataGridView.Rows[i].Cells[2].Value.ToString() + "\t" + "|"
+
+                    + "\t" + availableCarsDataGridView.Rows[i].Cells[3].Value.ToString() + "\t" + "|"
+
+                    + "\t" + availableCarsDataGridView.Rows[i].Cells[4].Value.ToString() + "\t" + "|"
+
+                    + "\t" + availableCarsDataGridView.Rows[i].Cells[5].Value.ToString() + "\t" + "|"
+
+                    + "\t" + availableCarsDataGridView.Rows[i].Cells[6].Value.ToString() + "\t" + "|");
+
+            }
+
+            avc.Close();
+
+            MessageBox.Show("Data Exported to: CarApp\\AvailableCars.txt", "Export Available Cars to Text");
+        }
+       
+
+        private void SoldExportBtn_Click(object sender, EventArgs e)
+        {
+            TextWriter sc = new StreamWriter(@"..\..\..\SoldCars.txt");
+
+            int rowcount = soldDataGridView.Rows.Count;
+
+            for (int i = 0; i < rowcount - 1; i++)
+
+            {                   // 7 Columns in the All Cars View
+
+                sc.WriteLine("|" + "\t" + soldDataGridView.Rows[i].Cells[0].Value.ToString() + "\t" + "|"
+
+                    + "\t" + soldDataGridView.Rows[i].Cells[1].Value.ToString() + "\t" + "|"
+
+                    + "\t" + soldDataGridView.Rows[i].Cells[2].Value.ToString() + "\t" + "|"
+
+                    + "\t" + soldDataGridView.Rows[i].Cells[3].Value.ToString() + "\t" + "|"
+
+                    + "\t" + soldDataGridView.Rows[i].Cells[4].Value.ToString() + "\t" + "|"
+
+                    + "\t" + soldDataGridView.Rows[i].Cells[5].Value.ToString() + "\t" + "|"
+
+                    + "\t" + soldDataGridView.Rows[i].Cells[6].Value.ToString() + "\t" + "|");
+
+            }
+
+            sc.Close();
+
+            MessageBox.Show("Data Exported to: CarApp\\SoldCars.txt", "Export Sold Cars to Text");
+        }
+        private void FinancialExportBtn_Click(object sender, EventArgs e)
+        {
+            TextWriter fr = new StreamWriter(@"..\..\..\FinancialReport.txt");
+
+            int rowcount = financialDataGridView.Rows.Count;
+
+            for (int i = 0; i < rowcount - 1; i++)
+
+            {                   // 3 Columns in the All Cars View
+
+                fr.WriteLine("|" + "\t" + financialDataGridView.Rows[i].Cells[0].Value.ToString() + "\t" + "|"
+
+                    + "\t" + financialDataGridView.Rows[i].Cells[1].Value.ToString() + "\t" + "|"
+
+                    + "\t" + financialDataGridView.Rows[i].Cells[2].Value.ToString() + "\t" + "|");
+
+            }
+
+            fr.Close();
+
+
+
+            MessageBox.Show("Data Exported to: CarApp\\Financial.txt", "Export Financial Report to Text");
         }
     }
 }
