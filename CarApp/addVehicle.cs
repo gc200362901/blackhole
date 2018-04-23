@@ -269,29 +269,26 @@ namespace CarApp
                 int modelId = int.Parse(data[1].Trim());
                 int year = int.Parse(data[2].Trim());
                 decimal price = decimal.Parse(data[3].Trim());
-                DateTime soldDate = DateTime.Parse(data[4].Trim());
+                string soldDate = (data[4].Trim());
                 StoreRecord(makeId, modelId, year, price, soldDate);
             }
         }
 
-        private void StoreRecord(int makeId, int modelId, int year, decimal price, DateTime soldDate)
+        private void StoreRecord(int makeId, int modelId, int year, decimal price, string soldDate)
         {
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                using (SqlCommand cmd = new SqlCommand("Select VehicleTypeId, Name FROM VehicleType", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Vehicle (MakeId, ModelId, Year, Price, SoldDate) " +
+                                                       "VALUES ('" + makeId + "'," +
+                                                                "'" + modelId + "', " +
+                                                                "'" + year + "', " +
+                                                                "'" + price + "', " +
+                                                                "'" + soldDate + "')" + conn))
                 {
-
                     conn.Open();
-                    cmd.CommandText =
-                    @"INSERT INTO Vehicle (MakeId, ModelId, Year, Price, SoldDate) 
-                 VALUES (@MakeId, @ModelId, @Year, @Price, @SoldDate)";
-                    cmd.Parameters.AddWithValue("@MakeId", makeId);
-                    cmd.Parameters.AddWithValue("@ModelId", modelId);
-                    cmd.Parameters.AddWithValue("@Year", year);
-                    cmd.Parameters.AddWithValue("@Price", price);
-                    cmd.Parameters.AddWithValue("@SoldDate", soldDate);
+                    
                     cmd.ExecuteNonQuery();
                 }
             }
