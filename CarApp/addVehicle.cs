@@ -258,18 +258,23 @@ namespace CarApp
         private void importVehicleBtn_Click(object sender, EventArgs e)
         {
             DialogResult result = openFileDialog1.ShowDialog();
-            string[] lines = File.ReadAllLines(openFileDialog1.FileName);
+            openFileDialog1.Title = "Choose a file to open";
 
-            foreach (var line in lines)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                var data = line.Split(new[] { ',' }, 5);
-                int makeId = int.Parse(data[0].Trim());
-                int modelId = int.Parse(data[1].Trim());
-                int year = int.Parse(data[2].Trim());
-                int price = int.Parse(data[3].Trim());
-                string soldDate = (data[4].Trim());
-                ImportVehicleToDb(makeId, modelId, year, price, soldDate);
+                string[] lines = File.ReadAllLines(openFileDialog1.FileName);
 
+                foreach (var line in lines)
+                {
+                    var data = line.Split(new[] { ',' }, 5);
+                    int makeId = int.Parse(data[0].Trim());
+                    int modelId = int.Parse(data[1].Trim());
+                    int year = int.Parse(data[2].Trim());
+                    int price = int.Parse(data[3].Trim());
+                    string soldDate = (data[4].Trim());
+                    ImportVehicleToDb(makeId, modelId, year, price, soldDate);
+
+                }
             }
         }
 
@@ -291,7 +296,120 @@ namespace CarApp
                     cmd.ExecuteNonQuery();
                 }
             }
-            
+            MessageBox.Show("Vehicle Saved");
+        }
+
+        private void importModelBtn_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            openFileDialog1.Title = "Choose a file to open";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string[] lines = File.ReadAllLines(openFileDialog1.FileName);
+
+                foreach (var line in lines)
+                {
+                    var data = line.Split(new[] { ',' }, 5);
+                    string name = (data[0].Trim());
+                    string engineSize = (data[1].Trim());
+                    int doors = int.Parse(data[2].Trim());
+                    string color = (data[3].Trim());
+                    int vehicleTypeId = int.Parse(data[4].Trim());
+                    ImportModelToDb(name, engineSize, doors, color, vehicleTypeId);
+                }
+            }
+        }
+
+        private void ImportModelToDb(string name, string engineSize, int doors, string color, int vehicleTypeId)
+        {
+            string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Model (Name, EngineSize, NumberOfDoors, Color, VehicleTypeId) " +
+                                                       "VALUES ('" + name + "'," +
+                                                               "'" + engineSize + "'," +
+                                                               "'" + doors + "'," +
+                                                               "'" + color + "'," +
+                                                               "'" + vehicleTypeId + "')", conn))
+                {
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            MessageBox.Show("Model Saved");
+        }
+
+        private void importVehicleTypeBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            openFileDialog1.Title = "Choose a file to open";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string[] lines = File.ReadAllLines(openFileDialog1.FileName);
+
+                foreach (var line in lines)
+                {
+                    string name = line;
+
+                    ImportVehicleTypeToDb(name);
+                }
+            }
+        }
+
+        private void ImportVehicleTypeToDb(string name)
+        {
+            string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO VehicleType (Name) " +
+                                                       "VALUES ('" + name + "')", conn))
+                {
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            MessageBox.Show("Vehicle Type Saved");
+        }
+
+        private void importMakeBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            openFileDialog1.Title = "Choose a file to open";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string[] lines = File.ReadAllLines(openFileDialog1.FileName);
+
+                foreach (var line in lines)
+                {
+                    string name = line;
+
+                    ImportMakeToDb(name);
+                }
+            }
+        }
+
+        private void ImportMakeToDb(string name)
+        {
+            string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Make (Name) " +
+                                                       "VALUES ('" + name + "')", conn))
+                {
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            MessageBox.Show("Make Saved");
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)

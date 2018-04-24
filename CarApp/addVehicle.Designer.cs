@@ -74,6 +74,9 @@
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.soldDateTextBox = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.importModelBtn = new System.Windows.Forms.Button();
+            this.importVehicleTypeBtn = new System.Windows.Forms.Button();
+            this.importMakeBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -159,6 +162,7 @@
             // 
             // makePanel
             // 
+            this.makePanel.Controls.Add(this.importMakeBtn);
             this.makePanel.Controls.Add(this.makeSaveButton);
             this.makePanel.Controls.Add(this.tableLayoutPanel5);
             this.makePanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -214,6 +218,7 @@
             // 
             // modelPanel
             // 
+            this.modelPanel.Controls.Add(this.importModelBtn);
             this.modelPanel.Controls.Add(this.modelSaveButton);
             this.modelPanel.Controls.Add(this.tableLayoutPanel4);
             this.modelPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -367,6 +372,7 @@
             // 
             // vehicleTypePanel
             // 
+            this.vehicleTypePanel.Controls.Add(this.importVehicleTypeBtn);
             this.vehicleTypePanel.Controls.Add(this.vehicleTypeSaveButton);
             this.vehicleTypePanel.Controls.Add(this.tableLayoutPanel3);
             this.vehicleTypePanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -571,16 +577,49 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // importModelBtn
+            // 
+            this.importModelBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importModelBtn.Location = new System.Drawing.Point(14, 230);
+            this.importModelBtn.Name = "importModelBtn";
+            this.importModelBtn.Size = new System.Drawing.Size(75, 29);
+            this.importModelBtn.TabIndex = 5;
+            this.importModelBtn.Text = "Import";
+            this.importModelBtn.UseVisualStyleBackColor = true;
+            this.importModelBtn.Click += new System.EventHandler(this.importModelBtn_Click_1);
+            // 
+            // importVehicleTypeBtn
+            // 
+            this.importVehicleTypeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importVehicleTypeBtn.Location = new System.Drawing.Point(14, 230);
+            this.importVehicleTypeBtn.Name = "importVehicleTypeBtn";
+            this.importVehicleTypeBtn.Size = new System.Drawing.Size(75, 29);
+            this.importVehicleTypeBtn.TabIndex = 6;
+            this.importVehicleTypeBtn.Text = "Import";
+            this.importVehicleTypeBtn.UseVisualStyleBackColor = true;
+            this.importVehicleTypeBtn.Click += new System.EventHandler(this.importVehicleTypeBtn_Click);
+            // 
+            // importMakeBtn
+            // 
+            this.importMakeBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importMakeBtn.Location = new System.Drawing.Point(14, 230);
+            this.importMakeBtn.Name = "importMakeBtn";
+            this.importMakeBtn.Size = new System.Drawing.Size(75, 29);
+            this.importMakeBtn.TabIndex = 7;
+            this.importMakeBtn.Text = "Import";
+            this.importMakeBtn.UseVisualStyleBackColor = true;
+            this.importMakeBtn.Click += new System.EventHandler(this.importMakeBtn_Click);
+            // 
             // AddVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 390);
             this.Controls.Add(this.addVehicleMainPanel);
-            this.Controls.Add(this.vehiclePanel);
-            this.Controls.Add(this.modelPanel);
-            this.Controls.Add(this.vehicleTypePanel);
             this.Controls.Add(this.makePanel);
+            this.Controls.Add(this.vehicleTypePanel);
+            this.Controls.Add(this.modelPanel);
+            this.Controls.Add(this.vehiclePanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "AddVehicle";
@@ -656,5 +695,8 @@
         private System.Windows.Forms.Label label14;
         public System.Windows.Forms.Button importVehicleBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        public System.Windows.Forms.Button importModelBtn;
+        public System.Windows.Forms.Button importVehicleTypeBtn;
+        public System.Windows.Forms.Button importMakeBtn;
     }
 }

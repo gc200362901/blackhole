@@ -206,6 +206,7 @@
             // 
             // allCarsPanel
             // 
+            this.allCarsPanel.BackColor = System.Drawing.Color.White;
             this.allCarsPanel.Controls.Add(this.AllCarsExportBtn);
             this.allCarsPanel.Controls.Add(this.allCarsDataGridView);
             this.allCarsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -221,9 +222,9 @@
             this.AllCarsExportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllCarsExportBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AllCarsExportBtn.Image = ((System.Drawing.Image)(resources.GetObject("AllCarsExportBtn.Image")));
-            this.AllCarsExportBtn.Location = new System.Drawing.Point(563, 305);
+            this.AllCarsExportBtn.Location = new System.Drawing.Point(611, 327);
             this.AllCarsExportBtn.Name = "AllCarsExportBtn";
-            this.AllCarsExportBtn.Size = new System.Drawing.Size(139, 100);
+            this.AllCarsExportBtn.Size = new System.Drawing.Size(101, 89);
             this.AllCarsExportBtn.TabIndex = 4;
             this.AllCarsExportBtn.Text = "Export";
             this.AllCarsExportBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -236,11 +237,11 @@
             this.allCarsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.allCarsDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.allCarsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.allCarsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.allCarsDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.allCarsDataGridView.Location = new System.Drawing.Point(0, 0);
             this.allCarsDataGridView.Name = "allCarsDataGridView";
             this.allCarsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.allCarsDataGridView.Size = new System.Drawing.Size(724, 428);
+            this.allCarsDataGridView.Size = new System.Drawing.Size(724, 321);
             this.allCarsDataGridView.TabIndex = 0;
             // 
             // availablePanel
@@ -260,9 +261,9 @@
             this.AvailableExportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AvailableExportBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AvailableExportBtn.Image = ((System.Drawing.Image)(resources.GetObject("AvailableExportBtn.Image")));
-            this.AvailableExportBtn.Location = new System.Drawing.Point(563, 305);
+            this.AvailableExportBtn.Location = new System.Drawing.Point(611, 327);
             this.AvailableExportBtn.Name = "AvailableExportBtn";
-            this.AvailableExportBtn.Size = new System.Drawing.Size(139, 100);
+            this.AvailableExportBtn.Size = new System.Drawing.Size(101, 89);
             this.AvailableExportBtn.TabIndex = 4;
             this.AvailableExportBtn.Text = "Export";
             this.AvailableExportBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -299,9 +300,9 @@
             this.SoldExportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SoldExportBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SoldExportBtn.Image = ((System.Drawing.Image)(resources.GetObject("SoldExportBtn.Image")));
-            this.SoldExportBtn.Location = new System.Drawing.Point(563, 305);
+            this.SoldExportBtn.Location = new System.Drawing.Point(611, 327);
             this.SoldExportBtn.Name = "SoldExportBtn";
-            this.SoldExportBtn.Size = new System.Drawing.Size(139, 100);
+            this.SoldExportBtn.Size = new System.Drawing.Size(101, 89);
             this.SoldExportBtn.TabIndex = 4;
             this.SoldExportBtn.Text = "Export";
             this.SoldExportBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -338,9 +339,9 @@
             this.FinancialExportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FinancialExportBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinancialExportBtn.Image = ((System.Drawing.Image)(resources.GetObject("FinancialExportBtn.Image")));
-            this.FinancialExportBtn.Location = new System.Drawing.Point(563, 305);
+            this.FinancialExportBtn.Location = new System.Drawing.Point(611, 327);
             this.FinancialExportBtn.Name = "FinancialExportBtn";
-            this.FinancialExportBtn.Size = new System.Drawing.Size(139, 100);
+            this.FinancialExportBtn.Size = new System.Drawing.Size(101, 89);
             this.FinancialExportBtn.TabIndex = 4;
             this.FinancialExportBtn.Text = "Export";
             this.FinancialExportBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -366,9 +367,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 528);
             this.Controls.Add(this.homePanel);
-            this.Controls.Add(this.soldPanel);
-            this.Controls.Add(this.availablePanel);
             this.Controls.Add(this.financialPanel);
+            this.Controls.Add(this.availablePanel);
+            this.Controls.Add(this.soldPanel);
             this.Controls.Add(this.allCarsPanel);
             this.Controls.Add(this.navPanel);
             this.Name = "Form1";
