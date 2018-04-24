@@ -160,6 +160,7 @@
             // 
             // homePanel
             // 
+            this.homePanel.BackColor = System.Drawing.Color.White;
             this.homePanel.Controls.Add(this.addToDbButton);
             this.homePanel.Controls.Add(this.pictureBox1);
             this.homePanel.Controls.Add(this.label1);

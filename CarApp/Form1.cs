@@ -141,8 +141,8 @@ namespace CarApp
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) -COUNT(SoldDate) AS 'Sold Vehicles', " +
-                                                       "COUNT(SoldDate) AS 'Vehicles for Sale', " +
+                using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) -COUNT(SoldDate) AS 'Available Vehicles', " +
+                                                       "COUNT(SoldDate) AS 'Sold Vehicles', " +
                                                        "SUM(case when SoldDate  IS NOT NULL then price else 0 end) AS 'Income Gained' " +
                                                        "FROM vehicle", conn))
                 {
