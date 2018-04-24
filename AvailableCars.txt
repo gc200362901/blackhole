@@ -1,0 +1,4 @@
+Volkswagen     Golf      2.0L      2         Blue      2017      23000.00  
+Ford           Explorer  5.0L      4         Black     2015      34500.00  
+Dodge          Ram       5.0L      4         Red       2017      49600.00  
+Honda          Civic     2.0L      2         Red       2017      22675.00  

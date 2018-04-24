@@ -1,11 +1,7 @@
 Volkswagen     Jetta     1.8L      4         White     2016      16500.00  
-Volkswagen     Golf      2.0L      2         Blue      2017      23000.00  
 Audi           A8        2.5L      4         Grey      2015      34695.00  
 Porsche        911 R     3.0L      2         Black     2016      95250.00  
-Ford           Explorer  5.0L      4         Black     2015      34500.00  
 Ford           F150      5.0L      4         White     2016      29050.00  
-Dodge          Ram       5.0L      4         Red       2017      49600.00  
 Toyota         Prius     2.0L      4         White     2016      27895.00  
-Honda          Civic     2.0L      2         Red       2017      22675.00  
 Mercedes       E3500     2.5L      4         Grey      2017      56750.00  
 Dodge          Ram       5.0L      4         Red       2017      29000.00  

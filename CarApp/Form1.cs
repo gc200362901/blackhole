@@ -185,19 +185,14 @@ namespace CarApp
 
                 //allCarsDataGridView.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                ac.WriteLine(allCarsDataGridView.Rows[i].Cells[0].Value.ToString() + "\t" + "|"
-
-                    + "\t" + allCarsDataGridView.Rows[i].Cells[1].Value.ToString() + "\t" + "|"
-
-                    + "\t" + allCarsDataGridView.Rows[i].Cells[2].Value.ToString() + "\t" + "|"
-
-                    + "\t" + allCarsDataGridView.Rows[i].Cells[3].Value.ToString() + "\t" + "|"
-
-                    + "\t" + allCarsDataGridView.Rows[i].Cells[4].Value.ToString() + "\t" + "|"
-
-                    + "\t" + allCarsDataGridView.Rows[i].Cells[5].Value.ToString() + "\t" + "|"
-
-                    + "\t" + allCarsDataGridView.Rows[i].Cells[6].Value.ToString() + "\t" + "|");
+                ac.WriteLine("{0,-15}{1,-10}{2,-10}{3,-10}{4,-10}{5,-10}{6,-10}",
+                                                      allCarsDataGridView.Rows[i].Cells[0].Value.ToString(),
+                                                      allCarsDataGridView.Rows[i].Cells[1].Value.ToString(),
+                                                      allCarsDataGridView.Rows[i].Cells[2].Value.ToString(),
+                                                      allCarsDataGridView.Rows[i].Cells[3].Value.ToString(),
+                                                      allCarsDataGridView.Rows[i].Cells[4].Value.ToString(),
+                                                      allCarsDataGridView.Rows[i].Cells[5].Value.ToString(),
+                                                      allCarsDataGridView.Rows[i].Cells[6].Value.ToString());
             }
 
             ac.Close();
@@ -216,19 +211,14 @@ namespace CarApp
 
             {                   // 7 Columns in the All Cars View
 
-                avc.WriteLine("|" + "\t" + availableCarsDataGridView.Rows[i].Cells[0].Value.ToString() + "\t" + "|"
-
-                    + "\t" + availableCarsDataGridView.Rows[i].Cells[1].Value.ToString() + "\t" + "|"
-
-                    + "\t" + availableCarsDataGridView.Rows[i].Cells[2].Value.ToString() + "\t" + "|"
-
-                    + "\t" + availableCarsDataGridView.Rows[i].Cells[3].Value.ToString() + "\t" + "|"
-
-                    + "\t" + availableCarsDataGridView.Rows[i].Cells[4].Value.ToString() + "\t" + "|"
-
-                    + "\t" + availableCarsDataGridView.Rows[i].Cells[5].Value.ToString() + "\t" + "|"
-
-                    + "\t" + availableCarsDataGridView.Rows[i].Cells[6].Value.ToString() + "\t" + "|");
+                avc.WriteLine("{0,-15}{1,-10}{2,-10}{3,-10}{4,-10}{5,-10}{6,-10}",
+                                                      availableCarsDataGridView.Rows[i].Cells[0].Value.ToString(),
+                                                      availableCarsDataGridView.Rows[i].Cells[1].Value.ToString(),
+                                                      availableCarsDataGridView.Rows[i].Cells[2].Value.ToString(),
+                                                      availableCarsDataGridView.Rows[i].Cells[3].Value.ToString(),
+                                                      availableCarsDataGridView.Rows[i].Cells[4].Value.ToString(),
+                                                      availableCarsDataGridView.Rows[i].Cells[5].Value.ToString(),
+                                                      availableCarsDataGridView.Rows[i].Cells[6].Value.ToString());
 
             }
 
@@ -248,20 +238,14 @@ namespace CarApp
 
             {                   // 7 Columns in the All Cars View
 
-                sc.WriteLine("|" + "\t" + soldDataGridView.Rows[i].Cells[0].Value.ToString() + "\t" + "|"
-
-                    + "\t" + soldDataGridView.Rows[i].Cells[1].Value.ToString() + "\t" + "|"
-
-                    + "\t" + soldDataGridView.Rows[i].Cells[2].Value.ToString() + "\t" + "|"
-
-                    + "\t" + soldDataGridView.Rows[i].Cells[3].Value.ToString() + "\t" + "|"
-
-                    + "\t" + soldDataGridView.Rows[i].Cells[4].Value.ToString() + "\t" + "|"
-
-                    + "\t" + soldDataGridView.Rows[i].Cells[5].Value.ToString() + "\t" + "|"
-
-                    + "\t" + soldDataGridView.Rows[i].Cells[6].Value.ToString() + "\t" + "|");
-
+                sc.WriteLine("{0,-15}{1,-10}{2,-10}{3,-10}{4,-10}{5,-10}{6,-10}", 
+                                                      soldDataGridView.Rows[i].Cells[0].Value.ToString(),
+                                                      soldDataGridView.Rows[i].Cells[1].Value.ToString(),
+                                                      soldDataGridView.Rows[i].Cells[2].Value.ToString(),
+                                                      soldDataGridView.Rows[i].Cells[3].Value.ToString(),
+                                                      soldDataGridView.Rows[i].Cells[4].Value.ToString(),
+                                                      soldDataGridView.Rows[i].Cells[5].Value.ToString(),
+                                                      soldDataGridView.Rows[i].Cells[6].Value.ToString());
             }
 
             sc.Close();
@@ -278,11 +262,10 @@ namespace CarApp
 
             {                   // 3 Columns in the All Cars View
 
-                fr.WriteLine("|" + "\t" + financialDataGridView.Rows[i].Cells[0].Value.ToString() + "\t" + "|"
-
-                    + "\t" + financialDataGridView.Rows[i].Cells[1].Value.ToString() + "\t" + "|"
-
-                    + "\t" + financialDataGridView.Rows[i].Cells[2].Value.ToString() + "\t" + "|");
+                fr.WriteLine("{0,-10}{1,-10}{2,-10}",
+                                                      financialDataGridView.Rows[i].Cells[0].Value.ToString(),
+                                                      financialDataGridView.Rows[i].Cells[1].Value.ToString(),
+                                                      financialDataGridView.Rows[i].Cells[2].Value.ToString());
 
             }
 
