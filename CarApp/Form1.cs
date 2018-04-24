@@ -288,8 +288,6 @@ namespace CarApp
 
             fr.Close();
 
-
-
             MessageBox.Show("Data Exported to: CarApp\\Financial.txt", "Export Financial Report to Text");
         }
     }

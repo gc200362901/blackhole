@@ -233,9 +233,6 @@ namespace CarApp
             int makeId = makeTypesDic.FirstOrDefault(x => x.Value == makeComboBox.Text).Key;
             int modelId = modelTypesDic.FirstOrDefault(x => x.Value == modelComboBox.Text).Key;
 
-            Console.WriteLine(makeId);
-            Console.WriteLine(modelId);
-
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connString))
@@ -262,19 +259,21 @@ namespace CarApp
         {
             DialogResult result = openFileDialog1.ShowDialog();
             string[] lines = File.ReadAllLines(openFileDialog1.FileName);
+
             foreach (var line in lines)
             {
                 var data = line.Split(new[] { ',' }, 5);
                 int makeId = int.Parse(data[0].Trim());
                 int modelId = int.Parse(data[1].Trim());
                 int year = int.Parse(data[2].Trim());
-                decimal price = decimal.Parse(data[3].Trim());
+                int price = int.Parse(data[3].Trim());
                 string soldDate = (data[4].Trim());
-                StoreRecord(makeId, modelId, year, price, soldDate);
+                ImportVehicleToDb(makeId, modelId, year, price, soldDate);
+
             }
         }
 
-        private void StoreRecord(int makeId, int modelId, int year, decimal price, string soldDate)
+        private void ImportVehicleToDb(int makeId, int modelId, int year, int price, string soldDate)
         {
             string connString = ConfigurationManager.ConnectionStrings["carDirectory"].ConnectionString;
 
@@ -282,10 +281,10 @@ namespace CarApp
             {
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO Vehicle (MakeId, ModelId, Year, Price, SoldDate) " +
                                                        "VALUES ('" + makeId + "'," +
-                                                                "'" + modelId + "', " +
-                                                                "'" + year + "', " +
-                                                                "'" + price + "', " +
-                                                                "'" + soldDate + "')" + conn))
+                                                               "'" + modelId + "'," +
+                                                               "'" + year + "'," +
+                                                               "'" + price + "'," +
+                                                               "'" + soldDate + "')", conn))
                 {
                     conn.Open();
                     
