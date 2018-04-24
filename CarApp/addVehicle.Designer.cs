@@ -113,6 +113,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 70);
@@ -162,6 +163,7 @@
             // 
             // makePanel
             // 
+            this.makePanel.BackColor = System.Drawing.Color.White;
             this.makePanel.Controls.Add(this.importMakeBtn);
             this.makePanel.Controls.Add(this.makeSaveButton);
             this.makePanel.Controls.Add(this.tableLayoutPanel5);
@@ -218,6 +220,7 @@
             // 
             // modelPanel
             // 
+            this.modelPanel.BackColor = System.Drawing.Color.White;
             this.modelPanel.Controls.Add(this.importModelBtn);
             this.modelPanel.Controls.Add(this.modelSaveButton);
             this.modelPanel.Controls.Add(this.tableLayoutPanel4);
@@ -353,6 +356,7 @@
             // 
             // addVehicleMainPanel
             // 
+            this.addVehicleMainPanel.BackColor = System.Drawing.Color.White;
             this.addVehicleMainPanel.Controls.Add(this.label13);
             this.addVehicleMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addVehicleMainPanel.Location = new System.Drawing.Point(0, 119);
@@ -364,7 +368,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(75, 43);
+            this.label13.Location = new System.Drawing.Point(82, 101);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(141, 22);
             this.label13.TabIndex = 0;
@@ -372,6 +376,7 @@
             // 
             // vehicleTypePanel
             // 
+            this.vehicleTypePanel.BackColor = System.Drawing.Color.White;
             this.vehicleTypePanel.Controls.Add(this.importVehicleTypeBtn);
             this.vehicleTypePanel.Controls.Add(this.vehicleTypeSaveButton);
             this.vehicleTypePanel.Controls.Add(this.tableLayoutPanel3);
@@ -428,6 +433,7 @@
             // 
             // vehiclePanel
             // 
+            this.vehiclePanel.BackColor = System.Drawing.Color.White;
             this.vehiclePanel.Controls.Add(this.importVehicleBtn);
             this.vehiclePanel.Controls.Add(this.vehicleSaveButton);
             this.vehiclePanel.Controls.Add(this.tableLayoutPanel2);
