@@ -7,3 +7,5 @@
   <li>C# console application using Visual Studio Forms</li>
   <li>Database CRUD function with Microsoft Server</li>
 </ul>
+
+![](Capture.JPG)
